@@ -1,8 +1,6 @@
 //flat unicode character &#x266d;
 //sharp unicode character &#x266f;
 
-function test(){alert('it works');}
-
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 const canvasWidth = parseInt(canvas.getAttribute("width"));
