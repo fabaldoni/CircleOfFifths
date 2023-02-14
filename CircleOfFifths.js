@@ -57,7 +57,8 @@ function drawCircleOfFifths() {
   drawSegmentText("B\u266d", 11);
   drawSegmentText("F", 12);
 
-  //console.log(getRadialSegmentEndPoints(0,0,1,0.25*Math.PI));
+  //make sure to restore original context.
+  ctx.restore();
 }
 
 function getRadialSegmentEndPoints(cx, cy, radius, angle) {
@@ -72,11 +73,11 @@ function getRadialSegmentEndPoints(cx, cy, radius, angle) {
 }
 
 function drawSegmentText(text, num) {
+  ctx.save();
   let tm = ctx.measureText(text); // TextMetrics object
   let tmOffset = tm.width / 2;
-  console.log(tmOffset);
-
-  ctx.save();
+  
+  
   ctx.font = "50px sans-serif";
   ctx.fillStyle = "black";
   ctx.rotate((num - 1) * (Math.PI / 6));
